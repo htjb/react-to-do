@@ -1,0 +1,28 @@
+.task-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: solid 1px #47bbff;
+}
+
+.task-card button {
+  margin: 1rem;
+  background-color: #479aff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.task-list {
+  margin-top: 2rem;
+}
+
+#search {
+  flex: 1;
+  resize: none;
+  width: 100%;
+}
