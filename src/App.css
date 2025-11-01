@@ -1,18 +1,62 @@
+.side-bar {
+  flex: 1;
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.side-bar-content {
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.nav-buttons button {
+  margin: 0 0;
+  background-color: var(--primary-color);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.2em 0.1rem;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.content {
+  flex: 2;
+  margin-left: 20%;
+  width: 80%;
+  padding: 5rem 0 0 0;
+  border-radius: 50px 0px 0px 50px;
+  background-color: #fff;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .task-card{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 1rem;
   text-align: center;
-  border-radius: 1rem;
-  border: solid 1px #47bbff;
+  margin: 1px;
+  border: solid 1px var(--primary-color);
 }
 
 .task-card button {
-  margin: 1rem;
-  background-color: #479aff;
+  margin: 1rem 0.5rem;
+  background-color: var(--secondary-color);
   color: white;
   border: none;
+  width: 6rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
@@ -21,8 +65,14 @@
   margin-top: 2rem;
 }
 
-#search {
-  flex: 1;
+textarea {
   resize: none;
-  width: 100%;
+  width: 80%;
+  margin: 0.5rem 2rem
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
 }

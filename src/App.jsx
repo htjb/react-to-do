@@ -8,6 +8,8 @@ function Card({ task, onDelete, setAllTasks}) {
     <div className='task-card'>
       <p>{task.task}</p>
       <button onClick={() => onDelete(task.id, db, setAllTasks)}>Delete</button>
+      <button>Edit</button>
+      <button>Complete</button>
     </div>
   )
 }
@@ -42,21 +44,33 @@ function App() {
 
   return (
     <>
-      <h1>To-Do-App</h1>
-      <textarea 
-        id='new-task'
-        value={text} 
-        onChange={e => setText(e.target.value)}
-      /><br />
-      <button onClick={() => addTodo(db, text, setAllTasks, setText)}>Add</button>
-      <textarea
-        id='search'
-        onChange={e => search(e.target.value, db, setAllTasks)}
-        placeholder="Search tasks..."
-      /><br />
-      <div className="task-list">
-        {allTasks.map(task => <Card key={task.id} task={task} 
-          onDelete={deleteTodo} setAllTasks={setAllTasks}/>)}
+      <div className="side-bar"> {/* this prevents side bar eating the corners of the content area */}
+        <div className="side-bar-content">
+          <h1>To-Done</h1>
+          <textarea
+            id='search'
+            onChange={e => search(e.target.value, db, setAllTasks)}
+            placeholder="Search tasks..."
+          /><br />
+          <div className='nav-buttons'>
+            <button><img src="./src/assets/task.png" className="icon" />All Tasks</button>
+            <button><img src="./src/assets/trash.png" className="icon" />Deleted</button>
+            <button><img src="./src/assets/check.png" className="icon" />Completed</button>
+          </div>
+        </div>
+      </div>
+      <div className="content">
+        <textarea 
+          id='new-task'
+          value={text} 
+          onChange={e => setText(e.target.value)}
+          placeholder='Add a new task... '
+        />
+        <button onClick={() => addTodo(db, text, setAllTasks, setText)}>Add</button>
+        <div className="task-list">
+          {allTasks.map(task => <Card key={task.id} task={task} 
+            onDelete={deleteTodo} setAllTasks={setAllTasks}/>)}
+        </div>
       </div>
     </>
   )
