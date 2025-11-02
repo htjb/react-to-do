@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <div className="side-bar"> {/* this prevents side bar eating the corners of the content area */}
-        <div className="side-bar-content">
+       
           <h1>To-Done</h1>
           <textarea
             id='search'
@@ -56,7 +56,6 @@ function App() {
             <button><img src="./src/assets/task.png" className="icon" />All Tasks</button>
             <button><img src="./src/assets/trash.png" className="icon" />Deleted</button>
             <button><img src="./src/assets/check.png" className="icon" />Completed</button>
-          </div>
         </div>
       </div>
       <div className="content">
@@ -64,9 +63,16 @@ function App() {
           id='new-task'
           value={text} 
           onChange={e => setText(e.target.value)}
+          onKeyDown={e => {
+            if (e.keyCode === 13) {
+              addTodo(db, text, setAllTasks, setText)
+            }
+          }}
           placeholder='Add a new task... '
         />
-        <button onClick={() => addTodo(db, text, setAllTasks, setText)}>Add</button>
+        <button 
+        onClick={() => addTodo(db, text, setAllTasks, setText)}
+        >Add</button>
         <div className="task-list">
           {allTasks.map(task => <Card key={task.id} task={task} 
             onDelete={deleteTodo} setAllTasks={setAllTasks}/>)}
