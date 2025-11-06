@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #fffee0;
-    --secondary-color: #fffdbe;
-    --tiertiary-color: white;
+    --primary-color: hsl(0, 0%, 38%);
+    --secondary-color: #b9b9b9;
+    --tiertiary-color: rgb(110, 110, 110);
 }
 
 body{

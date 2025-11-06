@@ -1,0 +1,49 @@
+.side-bar {
+  flex: 1;
+  position: fixed;
+  width: 5%;
+  height: 96%;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.nav-buttons button {
+  margin: 0 0;
+  background-color: var(--primary-color);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.2em 0.rem;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#search-container {
+  position: fixed;      /* makes it float above everything */
+  top: 0;
+  left: 25%;
+  width: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 0.5rem;
+  z-index: 50;          /* ensures it’s on top */
+}
+
+#search {
+  width: 80%;
+  height: 1em;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#search-close-button {
+  background-color: var(--secondary-color);
+  border: solid 1px #000000;
+  height: 100%;
+  cursor: pointer;
+}
